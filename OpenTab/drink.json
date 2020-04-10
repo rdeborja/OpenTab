@@ -1,0 +1,80 @@
+[
+	{
+        "id": "EF1CC5BB-4785-4D8E-AB98-5FA4E00B6A66",
+		"name": "Rail Drinks",
+		"items": [
+			{
+                "id": "EDCD038C-036F-4C40-826F-61C88CD84DDD",
+				"name": "Gin",
+				"price": 8
+			},
+			{
+                "id": "36A7CC40-18C1-48E5-BCD8-3B42D43BEAEE",
+				"name": "Rum",
+				"price": 8
+			},
+			{
+                "id": "CFB8C2DB-3478-4A10-92FA-3D2A2D5324FB",
+				"name": "Tequila",
+				"price": 8
+			},
+			{
+                "id": "8903A204-F5C1-4D5C-A0A1-5C0ECD27FDD7",
+				"name": "Vodka",
+				"price": 8
+			},
+			{
+                "id": "82B28AFF-BB29-4186-AA07-04959180D81A",
+				"name": "Whiskey",
+				"price": 8
+			}
+		]
+	},
+	{
+		"name": "Beer",
+        "id": "3D97FAB4-50AC-40FC-9BF0-3F46BB6A92F5",
+		"items": [
+			{
+                "id": "D44AAEBC-BF4F-42CD-8C37-0FEF772A5B69",
+				"name": "Heineken",
+				"price": 7
+			},
+			{
+                "id": "2BAD20C5-D007-4BBE-B074-8CF0F256A42F",
+				"name": "Stella Artois",
+				"price": 7
+			},
+			{
+                "id": "759527CB-1064-4082-A527-F04698F9D18F",
+				"name": "Coors",
+				"price": 7
+			},
+			{
+                "id": "AD419CE6-50CC-4132-BE8E-B92B9DFE4D02",
+				"name": "Budweiser",
+				"price": 7
+			}
+		]
+	},
+	{
+		"name": "Non-Alcohol",
+        "id": "1C89DAFD-7653-4EF2-BF20-C51A159BAC43",
+		"items": [
+			{
+                "id": "AB7E38EA-05A7-426A-AFF3-B3A32B3E86BF",
+				"name": "Coke",
+				"price": 5
+			},
+			{
+                "id": "758ABBE3-F338-4F7C-BAC7-8D61BC1FB329",
+				"name": "Orange Juice",
+				"price": 5
+			},
+			{
+                "id": "A73E2D2D-D53A-46D4-8829-62011EEF7DA4",
+				"name": "7up",
+				"price": 5
+			}
+		]
+	}
+]
