@@ -8,9 +8,27 @@
 
 import SwiftUI
 
+struct Box: Identifiable {
+    var id = UUID()
+    var image: String
+}
+
 struct BasicScroll: View {
+    var boxes: [Box] = [Box(image: "Rum"), Box(image: "Gin"), Box(image: "Tequila"), Box(image: "Whiskey"), Box(image: "Vodka")]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView {
+                HStack {
+                    ForEach(boxes) { box in
+                        Image(box.image)
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                    }
+                }
+            }
+        }
     }
 }
 

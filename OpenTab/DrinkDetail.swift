@@ -9,13 +9,54 @@
 import SwiftUI
 
 struct DrinkDetail: View {
+    // we keep a persistent eye on the order as it goes through the entire process
+    @EnvironmentObject var order: Order
+    
+    var drink: Drink
+    
+    static let drinkMixTypes = ["Coke", "Tonic", "7up", "Gingerale"]
+    
+    @State private var addCustom: Bool = false
+    @State private var addIce: Bool = false
+    @State private var drinkMixType = 0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            Image(drink.photo)
+                .resizable()
+                .frame(width: 300, height: 300)
+                .clipShape(Circle())
+            Text(drink.name).padding()
+            Form {                
+                if drink.isMixable {
+                    Picker("Mix \(drink.name) with?", selection: $drinkMixType) {
+                        ForEach(0 ..< Self.drinkMixTypes.count, id: \.self) {
+                            Text(Self.drinkMixTypes[$0])
+                        }
+                    }
+
+                    Toggle(isOn: $addCustom.animation()) {
+                        Text("Customize drink")
+                    }
+                    if addCustom {
+                        Toggle(isOn: $addIce) {
+                            Text("No ice")
+                        }
+                    }
+                }
+                Button("Add to order") {
+                    self.order.add(drink: self.drink)
+                }
+                .font(.headline)
+             }
+        }//.navigationBarTitle(Text(drink.name), displayMode: .inline)
     }
 }
 
 struct DrinkDetail_Previews: PreviewProvider {
+    static let drink: Drink = Drink(name: "Gin", price: 8.00, isMixable: true)
     static var previews: some View {
-        DrinkDetail()
+        DrinkDetail(drink: drink)
     }
 }

@@ -9,13 +9,30 @@
 import SwiftUI
 
 struct DrinkRow: View {
+    var drink: Drink
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        NavigationLink(destination: DrinkDetail(drink: drink)) {
+            HStack {
+                Image(drink.photo)
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .clipShape(Circle())
+                VStack(alignment: .leading) {
+                    Text(drink.name)
+                        .font(.headline)
+                    Text("$\(drink.price, specifier: "%.2f")")
+                        .font(.subheadline)
+                }
+                
+                
+            }.padding(4)
+        }
     }
 }
 
 struct DrinkRow_Previews: PreviewProvider {
     static var previews: some View {
-        DrinkRow()
+        DrinkRow(drink: Drink.example)
     }
 }
